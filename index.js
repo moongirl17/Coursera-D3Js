@@ -11,7 +11,6 @@ function loadData() {
 }
 
 function groupByAirline(data) {
-    //Iterate over each route, producing a dictionary where the keys is are the ailines ids and the values are the information of the airline.
     let result = data.reduce((result, d) => {
         let currentData = result[d.AirlineID] || {
             "AirlineID": d.AirlineID,
@@ -33,7 +32,6 @@ function groupByAirline(data) {
         result = result.sort((a,b)  => d3.descending(a.Count, b.Count));//TODO: Sort the data in descending order of count.
         return result
 }
-
 
 
 function drawAirlinesChart(airlines) {
